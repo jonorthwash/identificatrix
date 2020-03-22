@@ -16,7 +16,7 @@ lgdetector.hfst: languages
 	hfst-union kaz.detector.hfst kir.detector.hfst | hfst-union rus.detector.hfst | hfst-fst2fst -w > $@
 
 clean:
-	rm *.acceptor.hfst *.detector.hfst *.identifier.hfst lgdetector.hfst rus*
+	rm *.acceptor.hfst *.detector.hfst *.identifier.hfst lgdetector.hfst rus.*.att rus.*.hfst
 
 rus.automorf.hfst: rus.automorf.bin
 	lt-print $< | sed 's/     /\t/g' | sed 's/ε/@0@/g' | sed 's/ /@_SPACE_@/g' > rus.automorf.att
